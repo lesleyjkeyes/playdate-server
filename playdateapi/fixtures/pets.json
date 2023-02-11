@@ -1,0 +1,35 @@
+[
+  {
+    "model": "playdateapi.pet",
+    "pk": 1,
+    "fields": {
+      "name": "Mia",
+      "about": "A laidback German Shepherd that loves balls and snuggles.",
+      "profile_image": "https://images.freeimages.com/images/large-previews/49c/baret-1340158.jpg",
+      "breed": "German Shepherd",
+      "owner": 1
+    }
+  },
+  {
+    "model": "playdateapi.pet",
+    "pk": 2,
+    "fields": {
+      "name": "Remi",
+      "about": "I have tons of energy and love to play! I'm very vocal - my parents might say I'm annoying, but I disagree!",
+      "profile_image": "https://images.freeimages.com/images/large-previews/dcf/young-german-shepherd-dog-1364024.jpg",
+      "breed": "German Shepherd",
+      "owner": 2
+    }
+  },
+  {
+    "model": "playdateapi.pet",
+    "pk": 3,
+    "fields": {
+      "name": "Kibs",
+      "about": "Chonky fluffball",
+      "profile_image": "https://media.istockphoto.com/id/1218688592/photo/large-mixed-breed-dog-resting-in-the-green-grass.jpg?s=1024x1024&w=is&k=20&c=Qp0zGoxeUQMbP_iWyXQacMKDX5XLdntwykBbdUyc7cw=",
+      "breed": "Mixed",
+      "owner": 1
+    }
+  }
+]

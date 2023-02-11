@@ -1,0 +1,23 @@
+[
+  {
+    "model": "playdateapi.trait",
+    "pk": 1,
+    "fields": {
+      "title": "Playful"
+    }
+  },
+  {
+    "model": "playdateapi.trait",
+    "pk": 2,
+    "fields": {
+      "title": "Energetic"
+    }
+  },
+  {
+    "model": "playdateapi.trait",
+    "pk": 3,
+    "fields": {
+      "title": "Relaxed"
+    }
+  }
+]

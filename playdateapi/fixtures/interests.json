@@ -1,0 +1,23 @@
+[
+  {
+    "model": "playdateapi.interest",
+    "pk": 1,
+    "fields": {
+      "title": "Balls"
+    }
+  },
+  {
+    "model": "playdateapi.interest",
+    "pk": 2,
+    "fields": {
+      "title": "Walks"
+    }
+  },
+  {
+    "model": "playdateapi.interest",
+    "pk": 3,
+    "fields": {
+      "title": "Frisbees"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "model": "playdateapi.petinterest",
+    "pk": 1,
+    "fields": {
+      "pet_interest": 1,
+      "pet": 2
+    }
+  },
+  {
+    "model": "playdateapi.petinterest",
+    "pk": 2,
+    "fields": {
+      "pet_interest": 2,
+      "pet": 2
+    }
+  },
+  {
+    "model": "playdateapi.petinterest",
+    "pk": 3,
+    "fields": {
+      "pet_interest": 3,
+      "pet": 1
+    }
+  },
+  {
+    "model": "playdateapi.petinterest",
+    "pk": 4,
+    "fields": {
+      "pet_interest": 1,
+      "pet": 3
+    }
+  },
+  {
+    "model": "playdateapi.petinterest",
+    "pk": 5,
+    "fields": {
+      "pet_interest": 3,
+      "pet": 3
+    }
+  }
+]
