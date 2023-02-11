@@ -1,0 +1,32 @@
+[
+  {
+    "model": "playdateapi.message",
+    "pk": 1,
+    "fields": {
+      "sender": 1,
+      "receiver": 2,
+      "content": "Are you free on Saturday?",
+      "created_on": "2023-01-30T14:00:00.000"
+    }
+  },
+  {
+    "model": "playdateapi.message",
+    "pk": 2,
+    "fields": {
+      "sender": 2,
+      "receiver": 1,
+      "content": "Yeah, let's do it!",
+      "created_on": "2023-02-10T14:00:00.000"
+    }
+  },
+  {
+    "model": "playdateapi.message",
+    "pk": 3,
+    "fields": {
+      "sender": 3,
+      "receiver": 2,
+      "content": "Would you like to schedule a playdate?",
+      "created_on": "2023-01-10T14:00:00.000"
+    }
+  }
+]

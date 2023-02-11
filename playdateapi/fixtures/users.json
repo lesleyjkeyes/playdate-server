@@ -1,0 +1,44 @@
+[
+  {
+    "model": "playdateapi.user",
+    "pk": 1,
+    "fields": {
+      "first_name": "Lesley",
+      "last_name": "Keyes",
+      "email": "lesleyjkeyes@gmail.com",
+      "profile_image": "https://media.licdn.com/dms/image/C5603AQGGyWoRgXP4pw/profile-displayphoto-shrink_800_800/0/1636234515948?e=1681344000&v=beta&t=KfBivdjQbEdbPBqH_l0kusdNtFq42VhnB-8X5zS7Jdk",
+      "about": "Mom of 2 German Shepherds!",
+      "city": "Nashville",
+      "state": "Tennessee",
+      "country": "United States"
+    }
+  },
+  {
+    "model": "playdateapi.user",
+    "pk": 2,
+    "fields": {
+      "first_name": "Alex",
+      "last_name": "Woodall",
+      "email": "alex@gmail.com",
+      "profile_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0vRLcvCe0SirpUg-Qym-d2URYHl6zO0G2Jz4PUHho1Q&s",
+      "about": "Dad of 2 German Shepherds!",
+      "city": "Indianapolis",
+      "state": "Indiana",
+      "country": "United States"
+    }
+  },
+  {
+    "model": "playdateapi.user",
+    "pk": 3,
+    "fields": {
+      "first_name": "Remi",
+      "last_name": "Keyes",
+      "email": "remingston@gmail.com",
+      "profile_image": "https://media.istockphoto.com/id/1142192666/vector/avatar-profile-female-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=612x612&w=0&k=20&c=zRpQo0scJ5MWHkrESBfhG_gZYwBtHPHJvTQ21F_MBJA=",
+      "about": "Living my best life with my dog in Miami",
+      "city": "Miami",
+      "state": "Florida",
+      "country": "United States"
+    }
+  }
+]
