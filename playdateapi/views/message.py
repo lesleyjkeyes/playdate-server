@@ -23,7 +23,6 @@ class MessageView(ViewSet):
     def create(self, request):
         sender = User.objects.get(id=request.data["id"])
         receiver = User.objects.get(id=request.data["id"])
-        print(sender, receiver)
         message = Message.objects.create(
             sender=sender,
             receiver=receiver,
