@@ -35,6 +35,7 @@ class UserView(ViewSet):
     
     def update(self, request, pk):
         user = User.objects.get(pk=pk)
+        user.uid = request.data["uid"]
         user.first_name = request.data["first_name"]
         user.last_name = request.data["last_name"]
         user.profile_image = request.data["profile_image"]
@@ -58,4 +59,4 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         depth = 1
-        fields = ('id', 'first_name', 'last_name', 'about', 'profile_image', 'email', 'city', 'state', 'country')
+        fields = ('uid', 'id', 'first_name', 'last_name', 'about', 'profile_image', 'email', 'city', 'state', 'country')
