@@ -16,7 +16,15 @@ class PetView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
+        owners = User.objects.all()
         pets = Pet.objects.all()
+        # city = self.request.query_params.get("city", None)
+        # print(city)
+        # owners = owners.filter(city=city)
+        # print(owners[id])
+        # if city is not None:
+        #     owners = owners.filter(city=city)
+        #     pets = pets.filter(owner in owners)
         serializer = PetSerializer(pets, many=True)
         return Response(serializer.data)
       
