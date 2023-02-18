@@ -16,6 +16,9 @@ class PetInterestView(ViewSet):
 
     def list(self, request):
         pet_interests = PetInterest.objects.all()
+        pet_id = self.request.query_params.get("pet_id", None)
+        if pet_id is not None:
+            pet_interests = pet_interests.filter(pet_id=pet_id)
         serializer = PetInterestSerializer(pet_interests, many=True)
         return Response(serializer.data)
 
