@@ -16,8 +16,11 @@ class PetView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
-        owners = User.objects.all()
+        # owners = User.objects.all()
         pets = Pet.objects.all()
+        owner_id = self.request.query_params.get("owner_id", None)
+        if owner_id is not None:
+            pets = pets.filter(owner_id=owner_id)
         # city = self.request.query_params.get("city", None)
         # print(city)
         # owners = owners.filter(city=city)
@@ -29,7 +32,7 @@ class PetView(ViewSet):
         return Response(serializer.data)
       
     def create(self, request):
-        owner = User.objects.get(id=request.data["id"])
+        owner = User.objects.get(id=request.data["owner_id"])
         pet = Pet.objects.create(
             owner=owner,
             name=request.data["name"],
