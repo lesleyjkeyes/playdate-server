@@ -16,6 +16,10 @@ class FollowView(ViewSet):
 
     def list(self, request):
         follows = Follow.objects.all()
+        follower = self.request.query_params.get("follower_id", None)
+        followed = self.request.query_params.get("followed_id", None)
+        if followed and follower is not None:
+            follows = follows.filter(follower_id=follower, followed_id=followed)
         serializer = FollowSerializer(follows, many=True)
         return Response(serializer.data)
 
