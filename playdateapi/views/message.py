@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from playdateapi.models import Message
 from playdateapi.models import User
-
 class MessageView(ViewSet):
     """Message View"""
     def retrieve(self, request, pk):
@@ -17,9 +16,17 @@ class MessageView(ViewSet):
 
     def list(self, request):
         messages = Message.objects.all()
+        sender = self.request.query_params.get("sender_id", None)
+
+        if sender is not None:
+            messages = Message.objects.raw(
+                "select * from playdateapi_message where sender_id = %s or receiver_id = %s group by sender_id, receiver_id", 
+                [sender, sender]
+                )
+
         serializer = MessageSerializer(messages, many=True)
         return Response(serializer.data)
-      
+
     def create(self, request):
         sender = User.objects.get(id=request.data["id"])
         receiver = User.objects.get(id=request.data["id"])
@@ -46,7 +53,7 @@ class MessageView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 class MessageSerializer(serializers.ModelSerializer):
-    """serializer for trips"""
+    """serializer for messages"""
     class Meta:
         model = Message
         depth = 1

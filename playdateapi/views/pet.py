@@ -60,7 +60,7 @@ class PetView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 class PetSerializer(serializers.ModelSerializer):
-    """serializer for trips"""
+    """serializer for pets"""
     class Meta:
         model = Pet
         depth = 1
