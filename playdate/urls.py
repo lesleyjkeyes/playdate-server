@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from playdateapi.views import UserView, MessageView, PetView, InterestView, TraitView, PetInterestView, PetTraitView, FollowView, check_user, register_user
+from playdateapi.views import UserView, MessageView, PetView, InterestView, TraitView, PetInterestView, PetTraitView, FollowView, ConversationView, check_user, register_user
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', UserView, 'user')
@@ -14,6 +14,7 @@ router.register(r'traits', TraitView, 'trait')
 router.register(r'petinterests', PetInterestView, 'petinterest')
 router.register(r'pettraits', PetTraitView, 'pettrait')
 router.register(r'follows', FollowView, 'follow')
+router.register(r'conversations', ConversationView, 'conversation')
 
 urlpatterns = [
     path('register', register_user),

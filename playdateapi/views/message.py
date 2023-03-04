@@ -16,12 +16,13 @@ class MessageView(ViewSet):
 
     def list(self, request):
         messages = Message.objects.all()
-        sender = self.request.query_params.get("sender_id", None)
-
-        if sender is not None:
+        user_one_id = self.request.query_params.get("user_one_id", None)
+        user_two_id = self.request.query_params.get("user_two_id", None) 
+           
+        if user_one_id is not None:
             messages = Message.objects.raw(
-                "select * from playdateapi_message where sender_id = %s or receiver_id = %s group by sender_id, receiver_id", 
-                [sender, sender]
+                "select * from playdateapi_message where (sender_id = %s and receiver_id = %s) or (sender_id = %s and receiver_id = %s)", 
+                [user_one_id, user_two_id, user_two_id, user_one_id]
                 )
 
         serializer = MessageSerializer(messages, many=True)

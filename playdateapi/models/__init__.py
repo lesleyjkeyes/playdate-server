@@ -6,3 +6,4 @@ from .pet_trait import PetTrait
 from .follow import Follow
 from .interest import Interest
 from .pet_interest import PetInterest
+from .conversation import Conversation
