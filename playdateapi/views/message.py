@@ -21,7 +21,7 @@ class MessageView(ViewSet):
            
         if user_one_id is not None:
             messages = Message.objects.raw(
-                "select * from playdateapi_message where (sender_id = %s and receiver_id = %s) or (sender_id = %s and receiver_id = %s)", 
+                "select * from playdateapi_message where (sender_id = %s and receiver_id = %s) or (sender_id = %s and receiver_id = %s) order by id", 
                 [user_one_id, user_two_id, user_two_id, user_one_id]
                 )
 
@@ -29,13 +29,12 @@ class MessageView(ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        sender = User.objects.get(id=request.data["id"])
-        receiver = User.objects.get(id=request.data["id"])
+        sender = User.objects.get(id=request.data["userId"])
+        receiver = User.objects.get(id=request.data["otherUserId"])
         message = Message.objects.create(
             sender=sender,
             receiver=receiver,
             content=request.data["content"],
-            created_on=request.data["created_on"]
           )
         serializer = MessageSerializer(message)
         return Response(serializer.data)
