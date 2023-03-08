@@ -21,13 +21,6 @@ class PetView(ViewSet):
         owner_id = self.request.query_params.get("owner_id", None)
         if owner_id is not None:
             pets = pets.filter(owner_id=owner_id)
-        # city = self.request.query_params.get("city", None)
-        # print(city)
-        # owners = owners.filter(city=city)
-        # print(owners[id])
-        # if city is not None:
-        #     owners = owners.filter(city=city)
-        #     pets = pets.filter(owner in owners)
         serializer = PetSerializer(pets, many=True)
         return Response(serializer.data)
       
@@ -60,7 +53,7 @@ class PetView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 class PetSerializer(serializers.ModelSerializer):
-    """serializer for trips"""
+    """serializer for pets"""
     class Meta:
         model = Pet
         depth = 1

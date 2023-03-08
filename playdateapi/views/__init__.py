@@ -7,3 +7,4 @@ from .pet_interest import PetInterestView
 from .pet_trait import PetTraitView
 from .follow import FollowView
 from .auth import check_user, register_user
+from .conversation import ConversationView

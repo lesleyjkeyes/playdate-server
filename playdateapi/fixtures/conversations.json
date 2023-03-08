@@ -1,0 +1,26 @@
+[
+  {
+    "model": "playdateapi.conversation",
+    "pk": 1,
+    "fields": {
+      "user_one": 1,
+      "user_two": 2
+    }
+  },
+  {
+    "model": "playdateapi.conversation",
+    "pk": 2,
+    "fields": {
+      "user_one": 3,
+      "user_two": 1
+    }
+  },
+  {
+    "model": "playdateapi.conversation",
+    "pk": 3,
+    "fields": {
+      "user_one": 3,
+      "user_two": 2
+    }
+  }
+]
