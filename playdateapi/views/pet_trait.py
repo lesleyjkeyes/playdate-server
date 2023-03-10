@@ -25,7 +25,10 @@ class PetTraitView(ViewSet):
         pets = self.request.query_params.get("pets", None)
         if pets is not None:
             pet_traits = pet_traits = PetTrait.objects.raw("select * from playdateapi_pettrait pt group by pt.pet_id")
-        
+            
+        pet_trait_id = self.request.query_params.get("pet_trait_id", None)
+        if pet_trait_id is not None:
+            pet_traits = pet_traits.filter(pet_trait_id=pet_trait_id)
         
         serializer = PetTraitSerializer(pet_traits, many=True)
         return Response(serializer.data)
@@ -64,5 +67,5 @@ class PetTraitSerializer(serializers.ModelSerializer):
     pet = PetSerializer()
     class Meta:
         model = PetTrait
-        depth = 1
+        depth = 2
         fields = ('id', 'pet', 'pet_trait')
